@@ -1,0 +1,186 @@
+{
+    "title": "SqlManagementClient",
+    "description": "The Azure SQL Database management API provides a RESTful set of web APIs that interact with Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases, servers, and other entities.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/sql-blobAuditing/2017-03-01-preview/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ServerBlobAuditingPolicies_Get": {
+            "main": "./lib/actions/ServerBlobAuditingPolicies_Get.js",
+            "title": "Gets a server's blob auditing policy.",
+            "description": "Gets a server's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ServerBlobAuditingPolicies_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ServerBlobAuditingPolicies_CreateOrUpdate": {
+            "main": "./lib/actions/ServerBlobAuditingPolicies_CreateOrUpdate.js",
+            "title": "Creates or updates a server's blob auditing policy.",
+            "description": "Creates or updates a server's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ServerBlobAuditingPolicies_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DatabaseBlobAuditingPolicies_Get": {
+            "main": "./lib/actions/DatabaseBlobAuditingPolicies_Get.js",
+            "title": "Gets a database's blob auditing policy.",
+            "description": "Gets a database's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DatabaseBlobAuditingPolicies_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DatabaseBlobAuditingPolicies_CreateOrUpdate": {
+            "main": "./lib/actions/DatabaseBlobAuditingPolicies_CreateOrUpdate.js",
+            "title": "Creates or updates a database's blob auditing policy.",
+            "description": "Creates or updates a database's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DatabaseBlobAuditingPolicies_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExtendedDatabaseBlobAuditingPolicies_Get": {
+            "main": "./lib/actions/ExtendedDatabaseBlobAuditingPolicies_Get.js",
+            "title": "Gets an extended database's blob auditing policy.",
+            "description": "Gets an extended database's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExtendedDatabaseBlobAuditingPolicies_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExtendedDatabaseBlobAuditingPolicies_CreateOrUpdate": {
+            "main": "./lib/actions/ExtendedDatabaseBlobAuditingPolicies_CreateOrUpdate.js",
+            "title": "Creates or updates an extended database's blob auditing policy.",
+            "description": "Creates or updates an extended database's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExtendedDatabaseBlobAuditingPolicies_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExtendedServerBlobAuditingPolicies_Get": {
+            "main": "./lib/actions/ExtendedServerBlobAuditingPolicies_Get.js",
+            "title": "Gets an extended server's blob auditing policy.",
+            "description": "Gets an extended server's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExtendedServerBlobAuditingPolicies_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExtendedServerBlobAuditingPolicies_CreateOrUpdate": {
+            "main": "./lib/actions/ExtendedServerBlobAuditingPolicies_CreateOrUpdate.js",
+            "title": "Creates or updates an extended server's blob auditing policy.",
+            "description": "Creates or updates an extended server's blob auditing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExtendedServerBlobAuditingPolicies_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
